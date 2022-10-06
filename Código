@@ -1,43 +1,56 @@
-"""
+
 Lista I:
 
 2. João Papo-de-Pescador, homem de bem, comprou um microcomputador para controlar o rendimento diário de seu trabalho. Toda vez que ele traz um peso de peixes maior que o estabelecido pelo regulamento de pesca do estado de São Paulo (50 quilos) deve pagar uma multa de R$ 4,00 por quilo excedente. João precisa que você faça um programa que leia a variável peso (peso de peixes) e calcule o excesso. Gravar na variável excesso a quantidade de quilos além do limite e na variável multa o valor da multa que João deverá pagar. Imprima os dados do programa com as mensagens adequadas.
-"""
 
-# t = tamanho, l = litros, p = preço, lat = latas
-t = int(input('Declare em metros quadrados o tamanho: '))
+print("/tJoão Papo-de-Pescador/n")
 
-l = t / 3 
+peso = float(input("Peso: "))
+excesso = 0
+multa = 0
 
-if t % 54 == 0:
-	lat = t / 54
-else: 
-	lat = int(t / 54) + 1
+if peso <= 50:
+    print("Excesso: %.2f" %excesso)
+    print("Multa: %.2f" %multa)
+else:
+    excesso = peso - 50
+    multa = excesso * 4
 
-p = lat * 80
-print ('%d lat' %lat)
-print ('R$ %.2f' %p)
+    print("Excesso: %.2f" %excesso)
+    print("Multa: %.2f" %multa)
+
+##COMENTÁRIO Primeiro pedi o peso dos peixes pescados, e deixei os valores de excesso e multa como zero, sendo assim se o peso exceder 50 quilos o programa irá pegar o valor excluindo 50 do total e assim multiplicando por 4 (R$) e por fim mostra ao usuário o valor.
 
 
 
-"""
+
+
+
 4. Faça um programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser pintada. Considere que a cobertura da tinta é de 1 litro para cada 3 metros quadrados e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00. Informe ao usuário a quantidades de latas de tinta a serem compradas e o preço total.
+
+
 tamanho = int(input('Tamanho em metros quadrados: '))
 litros = tamanho / 3
-"""
-
 if tamanho % 54 == 0:
 	latas = tamanho / 54
 else: 
 	latas = int(tamanho / 54) + 1
-
 preco = latas * 80
 print ('%d latas' %latas)
 print ('R$ %.2f' %preco)
 
-"""
+
+
+##COMENTÁRIO Como é informado que se faça 1 litro a cada 3 metros inseri no código uma divisão dos litros como tamanho / 3 e fiz com que se as latas tivessem resto de 54 seria adicionado +1, assim o preço é as latas x preço e por fim mostra o resultado.
+
+
+
+
+
+
+
 6. Faça um programa que peça o tamanho de um arquivo para download (em MB) e a velocidade de um link de Internet (em Mbps), calcule e informe o tempo aproximado de download do arquivo usando este link (em minutos)
-"""
+
 
 # a = arquivo, l = link, t = tempo
 a = float(input("Informe do tamanho do arquivo em MegaByte: "))
@@ -46,41 +59,45 @@ t = ((a * 8) / l) / 60
 print ("O tempo aproximado de download e de %.2f minutos" %t)
 
 
-"""
+##COMENTÁRIO Este código é bem simples, basta pedir o tamanho do arquivo, velocidade e assim fazer uma conta que calcula em minutos o tempo de download usando uma fórmula de arquivo x 8 / velocidade e tudo isso / 60, e no final mostra ao usuário o resultado.
+
+
+
+
+
+
 Lista II:
 
 
 2. Faça um Programa que peça um número inteiro e determine se ele é par ou ímpar
-"""
 
 numero = int(input('Digite um inteiro: '))
-
-if numero%2 :
+if (numero%2) == 0:
     print("Ímpar")
 else:
     print("Par")
 
+##COMENTÁRIO O código confere se o resto do número é = 0, senão, ele é ímpar e se sim par.
 
-"""
+
+
 
 3. Faça um Programa que peça um número e informe se o número é inteiro ou decimal.
-
-"""
 
 numero = float (input ('Digite um numero: '))
 
 if (numero // 1 == numero):
     print('Numero inteiro.')
-
 else:
     print('Numero decimal.')
 
+##COMENTÁRIO Ele vê se o a divisão do número é = ele mesmo e assim diz se é inteiro ou senão, decimal.
 
-"""
+
+
+
 
 4. Faça um Programa que peça a idade e a altura de 5 pessoas, armazene cada informação no seu respectivo índice. Imprima a idade e a altura na ordem inversa a ordem lida.
-
-"""
 
 #i = idade, a = altura
 i = []
@@ -104,3 +121,5 @@ print(a)
 
 print('Idades')
 print(i)
+
+##COMENTÁRIO Usando o método “lista” ou “range” ele faz com que seja armazenado em uma ordem a altura e idade de 5 pessoas mas é pedido para que a ordem seja invertida e assim no final é mostrado o resultado. 
